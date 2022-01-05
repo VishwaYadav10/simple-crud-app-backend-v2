@@ -1,6 +1,6 @@
 module.exports = {
-    HOST: 'us-cdbr-east-05.cleardb.net',
-    USER: 'b3bf0c184a1c8b',
-    PASSWORD: 'cf209dc2',
-    DB_NAME: 'heroku_97a33d8fa0d4d08'
+    HOST: 'db-mysql-personal-05078-do-user-10555271-0.b.db.ondigitalocean.com',
+    USER: 'admin',
+    PASSWORD: 'AZHJFhcxVxhPekHB',
+    DB_NAME: 'simple-crud-app-db'
 }
