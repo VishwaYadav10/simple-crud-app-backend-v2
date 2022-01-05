@@ -19,10 +19,10 @@ const logger = new Logger('index');
 
 let connection;
 
-dbutils.getConnection(Constants.HOST, Constants.USER, Constants.PASSWORD, Constants.DB_NAME)
+dbutils.getConnection(Constants.HOST, Constants.USER, Constants.PASSWORD, Constants.DB_NAME, Constants.PORT)
     .then(_result => {
         connection = _result;
-        console.info("Connection found with db ", Constants.DB_NAME);
+        console.info("Connection found with db ", connection);
     })
     .catch(_err => {
         console.error('Exception occured while fetching MYSQL connection', e);
