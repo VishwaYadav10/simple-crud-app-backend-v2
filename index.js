@@ -22,6 +22,7 @@ let connection;
 dbutils.getConnection(Constants.HOST, Constants.USER, Constants.PASSWORD, Constants.DB_NAME)
     .then(_result => {
         connection = _result;
+        console.info("Connection found with db ", Constants.DB_NAME);
     })
     .catch(_err => {
         console.error('Exception occured while fetching MYSQL connection', e);
