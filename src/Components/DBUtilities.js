@@ -24,13 +24,13 @@ class DBUtilities {
 
     findById(_connection, _id, _tableName, callbackFnc) {
 
-        logger.info('findById call for table -- {} with id -- {}', _tableName, _id);
+        console.info('findById call for table -- {} with id -- {}', _tableName, _id);
 
         _connection.query('SELECT * FROM ?? WHERE id = ?', [_tableName, _id],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('findById call result -- {}', _result);
+                    console.info('findById call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
@@ -38,13 +38,13 @@ class DBUtilities {
 
     findByField(_connection, _fieldName, _fieldValue, _tableName, callbackFnc) {
 
-        logger.info('findByField call for table -- {} with fieldName -- {} and fieldValue -- {}', _tableName, _fieldName, _fieldValue);
+        console.info('findByField call for table -- {} with fieldName -- {} and fieldValue -- {}', _tableName, _fieldName, _fieldValue);
 
         _connection.query('SELECT * FROM ?? WHERE ?? = ?', [_tableName, _fieldName, _fieldValue],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('findByField call result -- {}', _result);
+                    console.info('findByField call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
@@ -52,13 +52,13 @@ class DBUtilities {
 
     findAll(_connection, _tableName, callbackFnc) {
 
-        logger.info('findAll call for table -- {}', _tableName);
+        console.info('findAll call for table -- {}', _tableName);
 
         _connection.query('SELECT * FROM ??', [_tableName],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('findAll call result -- {}', _result);
+                    console.info('findAll call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
@@ -66,13 +66,13 @@ class DBUtilities {
 
     save(_connection, _savingObject, _tableName, callbackFnc) {
 
-        logger.info('save call for table -- {} with object -- {}', _tableName, _savingObject);
+        console.info('save call for table -- {} with object -- {}', _tableName, _savingObject);
 
         _connection.query('INSERT INTO ?? (??) values (?)', [_tableName, Object.keys(_savingObject), Object.values(_savingObject)],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('save call result -- {}', _result);
+                    console.info('save call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
@@ -80,13 +80,13 @@ class DBUtilities {
 
     deleteById(_connection, _id, _tableName, callbackFnc) {
 
-        logger.info('deleteById call for table -- {} with id -- {}', _tableName, _id);
+        console.info('deleteById call for table -- {} with id -- {}', _tableName, _id);
 
         _connection.query('DELETE FROM ?? WHERE id = ?', [_tableName, _id],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('deleteById call result -- {}', _result);
+                    console.info('deleteById call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
@@ -94,13 +94,13 @@ class DBUtilities {
 
     deleteAll(_connection, _tableName, callbackFnc) {
 
-        logger.info('deleteAll call for table -- {}', _tableName);
+        console.info('deleteAll call for table -- {}', _tableName);
 
         _connection.query('DELETE FROM ??', [_tableName],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('deleteAll call result -- {}', _result);
+                    console.info('deleteAll call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
@@ -108,13 +108,13 @@ class DBUtilities {
 
     truncate(_connection, _tableName, callbackFnc) {
 
-        logger.info('truncate call for table -- {}', _tableName);
+        console.info('truncate call for table -- {}', _tableName);
 
         _connection.query('TRUNCATE TABLE ??', [_tableName],
             (_err, _result) => {
                 if (_err) throw _err;
                 else {
-                    logger.info('truncate call result -- {}', _result);
+                    console.info('truncate call result -- {}', _result);
                     return callbackFnc(_result);
                 }
             });
